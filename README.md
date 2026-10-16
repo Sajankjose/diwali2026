@@ -55,7 +55,7 @@ Run `node test-portfolio.cjs`: 900 budget/profile combinations check independent
 The discovery form asks for a comfortable monthly contribution. SIP is explained only when the fund plan is shown. Overview includes actual model percentages (after integer share rounding), a doughnut and a separate monthly budget.
 
 ### Stock construction
-Within the target stock budget, cap each of four positions at 25%. Screen supplied names for affordability at undated source prices, retain source order and select four distinct business groups (Banking/NBFC grouped). Floor quantities to whole shares. If four names cannot fit, allocate zero stocks and keep the sleeve in cash/unallocated. Never redistribute the remainder. This is a reference-price simulation, not a live quote or order; fees/taxes are excluded. Price does not imply quality. Approved research/suitability and current prices remain necessary.
+Within the target stock budget, cap each of four positions at 25%. Screen supplied names for affordability at undated source prices, retain source order and select four distinct business groups (Banking/NBFC grouped). Floor quantities to whole shares. If four names cannot fit, allocate zero stocks and move the unused portion into the selected debt fund when its minimum is met. Unused upfront allocations are added to the selected debt fund when its minimum is met; otherwise they remain unallocated. This is a reference-price simulation, not a live quote or order; fees/taxes are excluded. Price does not imply quality. Approved research/suitability and current prices remain necessary.
 
 ### Goal calculation
 Effective monthly rate = (1 + annual rate)^(1/12) - 1. Contributions are made at month-end. Assigned investments compound at the scenario rate; unallocated balances and contributions earn 0%. The goal cost compounds at the entered inflation rate. Required monthly contribution uses the same invested/cash ratio. The crossing date searches month by month up to 50 years against the then-inflated goal, rather than a fixed future target. Sliders are scenario assumptions; only the explicit apply button changes the monthly fund allocation. Returns are not predicted or guaranteed. General calculator reference: https://investor.sebi.gov.in/calculators/sip_calculator.html
@@ -65,3 +65,13 @@ All six family-support inputs must be known. Sum annual expenses increased 5% ye
 
 ### Verification
 `node test-portfolio.cjs` covers 900 profile/budget combinations, whole-share quantities/caps, four-or-zero stock holdings, independent budget totals, fund restrictions, flow/exports, zero and negative return calculations and insurance arithmetic. DOM stubs do not replace visual browser/device QA; that verification remains incomplete.
+
+
+## Plain-language allocation / progressive disclosure update
+The default result now leads with two visible lists: upfront stock quantities and one-time fund amounts, then fund-by-fund monthly amounts. No tabs need opening to discover the allocation. Each list reconciles to its own budget and explains any unassigned amount. If no stocks fit, the first view explains the actual reason rather than only showing a zero count.
+
+Unused stock/fund allocation amounts now go into the selected debt fund if its source minimum can be met, leaving only genuinely unallocatable amounts in reserve. This does not raise the equity target. The final doughnut uses actual allocated amounts. Monthly fund targets remain based on the original model fund weights before stock rounding.
+
+All detailed views are progressively disclosed: allocation chart, stock rationale, fund explanations, goal scenarios and insurance guidance use closed native details elements. The overview directly explains what to do once versus every month. The monthly scenario apply action returns the user to the updated visible monthly plan. No transactions are placed.
+
+Regression checks cover first-view holding names, quantities and monthly amounts, collapsed goal details, the no-stock reason, and redirecting a ₹10,000 example fully into funds. Existing 900 model scenarios and math checks pass. Browser/device visual testing remains outstanding.

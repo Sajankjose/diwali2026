@@ -16,7 +16,8 @@ Documentation: https://docs.github.com/en/pages/getting-started-with-github-page
 ## Included
 - index.html: entry page
 - style.css: responsive Diwali styling
-- app.js: discovery flow, portfolio preview, keepsake and sharing
+- app.js: tap-to-advance flow, shortlist, insurance guidance, keepsake and sharing
+- catalogue.js: 12 supplied stocks and 133 supplied funds
 - geojit-white.png: supplied official logo
 - .nojekyll: plain static hosting
 
@@ -24,8 +25,11 @@ All local asset references are relative and work under a repository subpath.
 Sharing automatically uses the deployed page address. This export removes the ChatGPT-private-preview notice from the share dialog; it does not change the existing hosted preview's access.
 Fonts use Google Fonts with local fallback fonts. Saving is optional browser-local storage. WhatsApp and email open user-controlled sharing/draft flows; no messages are sent automatically.
 
-## Current content status
-Exact approved stock names, mutual-fund schemes and allocation weights remain pending your inputs. Insurance guidance covers types rather than specific insurers. No live Geojit account, portfolio, recommendation or lead-capture service is connected.
+## Updated content
+The supplied Geojit stock and fund lists are connected. Exact source records, dates, minimum amounts and footnotes are preserved. Rationale is explanatory portfolio-role reasoning, not a company research thesis supplied in the files. Shortlists are ideas for a suitability discussion, not final allocations or share quantities.
+
+## Hosting
+Upload all files together, including catalogue.js. No build command or API key is needed. Sharing uses the deployed GitHub Pages address. The existing private preview remains unchanged in audience.
 
 ## Verification
-JavaScript syntax and ZIP/local asset integrity checked. The underlying flow's logic checks passed; browser visual QA remains unverified. Test on desktop and mobile before campaign launch.
+Syntax, data counts, source restrictions, shortlist gates, navigation transitions and export content checked. Browser visual QA remains unverified.

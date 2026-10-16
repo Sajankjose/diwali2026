@@ -49,3 +49,19 @@ General allocation principles: https://investor.sebi.gov.in/investment-thingsbef
 
 ### Validation
 Run `node test-portfolio.cjs`: 900 budget/profile combinations check independent budget reconciliation, minimums, restrictions, sector mix and risk gates. DOM-stub checks cover flow rendering and export. `node --check app.js` passes. Physical-device / browser visual QA is not completed; responsive CSS was reviewed against the supplied iPhone overlap screenshots.
+
+
+## Planning dashboard update
+The discovery form asks for a comfortable monthly contribution. SIP is explained only when the fund plan is shown. Overview includes actual model percentages (after integer share rounding), a doughnut and a separate monthly budget.
+
+### Stock construction
+Within the target stock budget, cap each of four positions at 25%. Screen supplied names for affordability at undated source prices, retain source order and select four distinct business groups (Banking/NBFC grouped). Floor quantities to whole shares. If four names cannot fit, allocate zero stocks and keep the sleeve in cash/unallocated. Never redistribute the remainder. This is a reference-price simulation, not a live quote or order; fees/taxes are excluded. Price does not imply quality. Approved research/suitability and current prices remain necessary.
+
+### Goal calculation
+Effective monthly rate = (1 + annual rate)^(1/12) - 1. Contributions are made at month-end. Assigned investments compound at the scenario rate; unallocated balances and contributions earn 0%. The goal cost compounds at the entered inflation rate. Required monthly contribution uses the same invested/cash ratio. The crossing date searches month by month up to 50 years against the then-inflated goal, rather than a fixed future target. Sliders are scenario assumptions; only the explicit apply button changes the monthly fund allocation. Returns are not predicted or guaranteed. General calculator reference: https://investor.sebi.gov.in/calculators/sip_calculator.html
+
+### Protection calculation
+All six family-support inputs must be known. Sum annual expenses increased 5% yearly for the requested whole years, add loans/other commitments, subtract assets and current death benefits, floor the gap at zero. No investment discount is assumed. This is an expense-based planning estimate, not an underwriting decision or policy quote. Health gap compares a user-entered review target with personal cover; it does not prescribe adequate cover. Emergency runway = accessible savings / monthly family support. Unknown fields stay unknown.
+
+### Verification
+`node test-portfolio.cjs` covers 900 profile/budget combinations, whole-share quantities/caps, four-or-zero stock holdings, independent budget totals, fund restrictions, flow/exports, zero and negative return calculations and insurance arithmetic. DOM stubs do not replace visual browser/device QA; that verification remains incomplete.

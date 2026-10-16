@@ -75,3 +75,8 @@ Unused stock/fund allocation amounts now go into the selected debt fund if its s
 All detailed views are progressively disclosed: allocation chart, stock rationale, fund explanations, goal scenarios and insurance guidance use closed native details elements. The overview directly explains what to do once versus every month. The monthly scenario apply action returns the user to the updated visible monthly plan. No transactions are placed.
 
 Regression checks cover first-view holding names, quantities and monthly amounts, collapsed goal details, the no-stock reason, and redirecting a ₹10,000 example fully into funds. Existing 900 model scenarios and math checks pass. Browser/device visual testing remains outstanding.
+
+## Resolve blocked-plan dead ends
+Blocked results now list the exact triggering answers with direct edit actions. Amount correction opens the upfront/monthly question. The empty allocation chart and irrelevant stock/fund detail panels are hidden in this state. Actual answers and suitability gates remain intact.
+
+An optional closed learning example offers funds-only (50/50 equity/debt) and higher-risk stock/fund scenarios using the entered budgets, with explicit hypothetical long-term/adult/surplus assumptions. It uses only supplied names, rounds stock quantities, observes lump-sum minima and reconciles both budgets separately. It does not mutate answers, overwrite the personal plan, execute investments or imply that essential funds are suitable for investment. Insurance guidance remains available. Tests include ₹25,000 upfront / ₹9,500 monthly, correct question links and example-state isolation.

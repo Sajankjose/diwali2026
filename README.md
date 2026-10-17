@@ -83,3 +83,6 @@ An optional closed learning example offers funds-only (50/50 equity/debt) and hi
 
 ## Active goal-first version — October 17
 The entry page now loads `goal-first.js` instead of `planner.js`. This rebuild understands the goal, timeline, comfort and loss capacity before revealing percentage weights; upfront and monthly amounts are collected afterwards. Actual rupee allocations and quantities are then calculated, with editable budgets. Beginner exclusion and rigid four-stock minimum have been removed. Current model rules, assumptions and validation are documented in `GOAL_FIRST_RULES.md`; this supersedes the earlier allocation sections above. Run `node test-goal-first.cjs` for the active journey tests. Existing tests for the previous planner are historical.
+
+## Diwali business route and illustrated keepsake
+The active entry scripts are `catalogue.js`, `app.js`, `goal-first.js`, and `business.js`. The guided Diwali stock option and employer-aware insurance review are included. The in-app gift download now creates an offline branded illustrated HTML rather than a text dump. See `GOAL_FIRST_RULES.md` for the active rules. Run `node test-goal-first.cjs`.

@@ -31,3 +31,14 @@ Goal calculations use effective monthly compounding, month-end contributions, ad
 
 ## Validation
 Run `node test-goal-first.cjs`: 576 profile/budget scenarios plus beginner threshold, capacity restrictions, conditional labels, projection arithmetic, all screens, mix-before-money ordering, exports, back and restart, using DOM stubs. Generated result markup checked for unique IDs, form/protection outputs and closed details. Browser/physical-device visual QA remains unverified.
+
+## Diwali route, insurance amounts and gift export
+`business.js` now loads after the active goal-first module. The sixth understanding step captures personal health/life and employer health/life amounts before the suggested mix. Unknown amounts remain unknown, not zero. Family needs and health context use progressive disclosure.
+
+After seeing the suggested mix, users choose the goal-based route or the Geojit Diwali stock-basket route. All 12 source stock picks can be explored. The latter adds an optional preferred stock budget, bounded by the model stock limit and included within—not added to—the upfront investment. Ineligible stock profiles still see the catalogue for learning. Both routes retain risk/capacity conditions.
+
+Life need = inflated family support + debts + other future commitments − assets, floored at zero. Personal-cover gap and current gap including employer cover are shown separately. Health compares personal cover against a user/adviser-entered target; employer limits remain separate. Family members, oldest age, city, employer-covered members/shared-limit status and top-up/deductible are captured for review. No unapproved age/city-based medical cover range is invented. Health cover adequacy requires policy and needs assessment. Reference: https://irdai.gov.in/health-dept .
+
+The downloadable HTML is self-contained: official logo embedded as PNG data URI, SVG Diwali envelope/diya illustration, SVG allocation chart, aligned stock/fund tables, insurance need/gap cards, optional goal scenario and print CSS. It uses no external images/fonts. Escaped user text prevents markup injection. Its link back to the app uses the deployment origin/path. Financial details appear only in the personal downloaded gift; invitation sharing remains generic.
+
+Tests include capped Diwali budget reconciliation, independent employer/personal gaps, unknown data, all journey steps, embedded-logo/table/SVG export and text escaping. Generated sample markup has three allocation tables and four SVG illustrations/charts. Browser/phone visual QA remains unverified.
